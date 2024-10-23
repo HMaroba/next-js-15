@@ -1,11 +1,11 @@
 
- async function getArtist(username: string) {
-  const res = await fetch(`https://api.example.com/artist/${username}`)
+ async function getBlog(username: string) {
+  const res = await fetch(`https://api.vercel.app/blog/${username}`)
   return res.json()
 }
  
-async function getAlbums(username: string) {
-  const res = await fetch(`https://api.example.com/artist/${username}/albums`)
+async function getAuthors(username: string) {
+  const res = await fetch(`https://api.vercel.app/blog/${username}/albums`)
   return res.json()
 }
  
@@ -14,16 +14,17 @@ export default async function Page({
 }: {
   params: { username: string }
 }) {
-  const artistData = getArtist(username)
-  const albumsData = getAlbums(username)
+  const artistData = getBlog(username)
+  const albumsData = getAuthors(username)
  
   // Initiate both requests in parallel
   const [artist, albums] = await Promise.all([artistData, albumsData])
+  console.log(albums);
+  
  
   return (
     <>
       <h1>{artist.name}</h1>
-      <Albums list={albums} />
     </>
   )
 }
