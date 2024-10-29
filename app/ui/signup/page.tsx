@@ -1,8 +1,10 @@
-import { signup } from '@/app/actions/auth'
+import { signup } from "@/app/actions/auth";
+import Form from "next/form";
+
  
 export function SignupForm() {
   return (
-    <form action={signup}>
+    <Form action={signup} >
       <div>
         <label htmlFor="name">Name</label>
         <input id="name" name="name" placeholder="Name" />
@@ -16,6 +18,6 @@ export function SignupForm() {
         <input id="password" name="password" type="password" />
       </div>
       <button type="submit">Sign Up</button>
-    </form>
+    </Form>
   )
 }
