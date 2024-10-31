@@ -23,8 +23,8 @@ export default async function Page({
   
  
   return (
-    <>
+    <div className="p-5">
       <h1>{artist.name}</h1>
-    </>
+    </div>
   )
 }
