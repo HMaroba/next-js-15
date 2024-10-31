@@ -4,6 +4,8 @@ export default function Page() {
   return (
     <Form action="/search">
       <input name="query" />
+      <input name="query" />
+      <input name="query" />
       <button type="submit">Submit</button>
     </Form>
   );
